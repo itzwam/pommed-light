@@ -45,7 +45,9 @@ kbd_backlight_open(int flags)
   char *kbdbck_node[] =
     {
       "/sys/class/leds/smc::kbd_backlight/brightness", /* 2.6.25 & up */
-      "/sys/class/leds/smc:kbd_backlight/brightness"
+      "/sys/class/leds/smc:kbd_backlight/brightness", /* 2.6.25 & up */
+      "/sys/class/leds/spi::kbd_backlight/brightness",
+      "/sys/class/leds/spi:kbd_backlight/brightness"
     };
   int fd;
   int i;
