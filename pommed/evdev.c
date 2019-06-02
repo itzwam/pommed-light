@@ -1269,7 +1269,7 @@ evdev_inotify_init(void)
 int
 evdev_init(void)
 {
-  logdebug("\nEVDEV_INIT STARTING\n")
+  logdebug("\nEVDEV_INIT STARTING\n");
   int ret;
   int i;
 
