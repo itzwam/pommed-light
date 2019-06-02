@@ -895,7 +895,7 @@ evdev_is_chocapic(unsigned short *id)
   if (id[ID_BUS] != BUS_SPI)
     return 0;
 
-  if (id[ID_VENDOR] != SPI_PRODUCT_ID_CHOCAPIC_ANSI)
+  if (id[ID_VENDOR] != SPI_VENDOR_ID_APPLE)
     return 0;
 
   if ((product == SPI_PRODUCT_ID_CHOCAPIC_ANSI)
