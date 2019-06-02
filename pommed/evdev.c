@@ -1269,6 +1269,7 @@ evdev_inotify_init(void)
 int
 evdev_init(void)
 {
+  logdebug("\nEVDEV_INIT STARTING\n")
   int ret;
   int i;
 
@@ -1283,6 +1284,7 @@ evdev_init(void)
   for (i = 0; i < EVDEV_MAX; i++)
     {
       ret = snprintf(evdev, 32, "%s%d", EVDEV_BASE, i);
+      logdebug("%s%d", EVDEV_BASE, i);
 
       if ((ret <= 0) || (ret > 31))
 	return -1;
