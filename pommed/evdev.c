@@ -1160,11 +1160,11 @@ evdev_try_add(int fd)
 
   ioctl(fd, EVIOCGID, id);
 
-  logdebug("evdev_is_internal? %d", evdev_is_internal(id))
-  logdebug("has_kbd_backlight? %d", has_kbd_backlight())
-  logdebug("evdev_is_lidswitch? %d", evdev_is_lidswitch(id))
-  logdebug("evdev_is_mouseemu? %d", evdev_is_mouseemu(id))
-  logdebug("evdev_is_extkbd? %d", evdev_is_extkbd(id))
+  logdebug("evdev_is_internal? %d", evdev_is_internal(id));
+  logdebug("has_kbd_backlight? %d", has_kbd_backlight());
+  logdebug("evdev_is_lidswitch? %d", evdev_is_lidswitch(id));
+  logdebug("evdev_is_mouseemu? %d", evdev_is_mouseemu(id));
+  logdebug("evdev_is_extkbd? %d", evdev_is_extkbd(id));
 
   if ((!evdev_is_internal(id))
 #ifndef __powerpc__
