@@ -14,6 +14,18 @@
 /* Special PowerBook buttons */
 #define ADB_PRODUCT_ID_PBBUTTONS      0x771f
 
+/****** SPI Devices ******/
+
+#define SPI_VENDOR_ID_APPLE           0x06cb
+#define SPI_VENDOR_ID_NULL            0x0000
+
+/* Fountain & Geyser devices : AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTrackpad.kext */
+
+/* Apple Fountain keyboard + trackpad */
+#define SPI_PRODUCT_ID_CHOCAPIC_ANSI  0x0557
+#define SPI_PRODUCT_ID_CHOCAPIC_ISO   0x020f
+#define SPI_PRODUCT_ID_CHOCAPIC_JIS   0x0210
+
 
 /****** USB Devices ******/
 

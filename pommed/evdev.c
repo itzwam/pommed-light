@@ -885,6 +885,32 @@ evdev_is_wellspring9(unsigned short *id)
 
   return 0;
 }
+/* MacBookPro14,1 (13" Early 2017)
+ */
+static int
+evdev_is_chocapic(unsigned short *id)
+{
+  unsigned short product = id[ID_PRODUCT];
+
+  if (id[ID_BUS] != BUS_SPI)
+    return 0;
+
+  if (id[ID_VENDOR] != SPI_PRODUCT_ID_CHOCAPIC_ANSI)
+    return 0;
+
+  if ((product == SPI_PRODUCT_ID_CHOCAPIC_ANSI)
+      || (product == SPI_PRODUCT_ID_CHOCAPIC_ISO)
+      || (product == SPI_PRODUCT_ID_CHOCAPIC_JIS))
+    {
+      logdebug(" -> Apple SPI internal keyboard (touchpad ?)\n");
+
+      kbd_set_fnmode();
+
+      return 1;
+    }
+
+  return 0;
+}
 
 /* Any internal keyboard */
 static int
@@ -905,6 +931,7 @@ evdev_is_internal(unsigned short *id)
 	  || evdev_is_2011mba(id)
 	  || evdev_is_2012mba(id)
 	  || evdev_is_2014mba(id)
+	  || evdev_is_chocapic(id)
 	  );
 }
 
