@@ -95,6 +95,7 @@ evdev_process_events(int fd, uint32_t events)
   if (ret != sizeof(struct input_event))
     return;
 
+
   if (ev.type == EV_KEY)
     {
       /* key released - we don't care */
@@ -107,6 +108,8 @@ evdev_process_events(int fd, uint32_t events)
 	  kbd_bck_info.idle = 0;
 	  kbd_backlight_inhibit_clear(KBD_INHIBIT_IDLE);
 	}
+
+  logdebug("\nKEY: %d Down\n", ev.code);
 
       switch (ev.code)
 	{
