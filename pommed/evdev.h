@@ -26,6 +26,8 @@
 #define SPI_PRODUCT_ID_CHOCAPIC_ISO   0x020f
 #define SPI_PRODUCT_ID_CHOCAPIC_JIS   0x0210
 
+#define SPI_PRODUCT_ID_NULL           0x0000
+
 
 /****** USB Devices ******/
 

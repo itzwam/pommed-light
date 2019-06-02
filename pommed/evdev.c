@@ -895,12 +895,11 @@ evdev_is_chocapic(unsigned short *id)
   if (id[ID_BUS] != BUS_SPI)
     return 0;
 
-  if (id[ID_VENDOR] != SPI_VENDOR_ID_APPLE)
+  if (id[ID_VENDOR] != SPI_VENDOR_ID_APPLE
+      && id[ID_VENDOR] != SPI_VENDOR_ID_NULL)
     return 0;
 
-  if ((product == SPI_PRODUCT_ID_CHOCAPIC_ANSI)
-      || (product == SPI_PRODUCT_ID_CHOCAPIC_ISO)
-      || (product == SPI_PRODUCT_ID_CHOCAPIC_JIS))
+  if (product == SPI_PRODUCT_ID_NULL)
     {
       logdebug(" -> Apple SPI internal keyboard (touchpad ?)\n");
 
